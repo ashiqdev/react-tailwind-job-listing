@@ -6,15 +6,22 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.20.0",
+    "axios-hooks": "^2.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "yarn run watch:css && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:css": "postcss src/css/tailwind.css -o src/css/main.css",
+    "watch:css": "postcss src/css/tailwind.css -o src/css/main.css",
+    "start:server": "nodemon server/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +37,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "9.8.6",
+    "postcss-cli": "^8.1.0",
+    "tailwindcss": "^1.8.13"
   }
 }
